@@ -78,17 +78,16 @@ namespace DZ3
 
 
             Console.WriteLine("Задание 6");
-
-            int[] Mass = new int[5];
-            for (int i = 0; i < 5; i++)
-            {
-                Mass[i] = int.Parse(Console.ReadLine());
-            }
-            Console.WriteLine(String.Join(", ", Mass));
-            int sum = 0;
-
             try
             {
+                int[] Mass = new int[5];
+                for (int i = 0; i < 5; i++)
+                {
+                    Mass[i] = int.Parse(Console.ReadLine());
+                }
+                Console.WriteLine(String.Join(", ", Mass));
+                int sum = 0;
+
                 for (int i = 0; i < Mass.Length; i++)
                 {
                     if (Mass[i] > 0)
@@ -101,13 +100,12 @@ namespace DZ3
             }
             catch (FormatException)
             {
-                Console.WriteLine("FormatException");
+                Console.WriteLine("Вы ввели не число");
             }
-            
+
             catch (ArgumentOutOfRangeException)
             {
-
-                Console.WriteLine("ArgumentOutOfRangeException");
+                Console.WriteLine("Отрицательное значение");
             }
             finally
             {
