@@ -16,12 +16,25 @@ namespace DZ3
         static void Main(string[] args)
         {
             Console.WriteLine("Задание 1");
-
+            Console.Write("Введите значение а: \t");
+            int A = int.Parse(Console.ReadLine());
+            Console.Write("Введите значение b: \t");
+            int B = int.Parse(Console.ReadLine());
+            Console.Write("Введите значение d: \t");
+            int D = int.Parse(Console.ReadLine());
+            if (A >= D + 2 && B >= D + 2)
+            {
+                Console.WriteLine("Сможет");
+            }
+            else
+            {
+                Console.WriteLine("Не сможет(");
+            }
 
             Console.ReadKey();
 
             Console.WriteLine("Задание 2");
-            Console.WriteLine("Введите число n \t");
+            Console.WriteLine("Введите число 1<=n<=9 \t");
             int n = int.Parse(Console.ReadLine());
 
             for (int i = 1; i < 11; i++)
@@ -65,10 +78,43 @@ namespace DZ3
 
 
             Console.WriteLine("Задание 6");
+
+            int[] Mass = new int[5];
+            for (int i = 0; i < 5; i++)
+            {
+                Mass[i] = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine(String.Join(", ", Mass));
+            int sum = 0;
+
+            try
+            {
+                for (int i = 0; i < Mass.Length; i++)
+                {
+                    if (Mass[i] > 0)
+                    {
+                        sum = sum + Mass[i];
+                    }
+                }
+                double arifm = sum / Mass.Length;
+                Console.WriteLine("Среднее арифметическое = " + arifm);
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("FormatException");
+            }
+            
+            catch (ArgumentOutOfRangeException)
+            {
+
+                Console.WriteLine("ArgumentOutOfRangeException");
+            }
+            finally
+            {
+                Console.WriteLine("Пока");
+            }
             Console.ReadKey();
 
-
-            Console.WriteLine("Задание 7");
             Console.WriteLine("Задание 7");
 
             Console.Write("Введите номер карты \t");
@@ -139,6 +185,7 @@ namespace DZ3
 
 
             Console.WriteLine("Задание 9");
+            Console.Write("Введите номер недели: \t");
             int Week = int.Parse(Console.ReadLine());
             switch (Week)
             {
@@ -194,6 +241,24 @@ namespace DZ3
 
 
             Console.WriteLine("Задание 11");
+            Random random = new Random();
+            int[] massiv = new int[5];
+            for (int i = 0; i < 5; i++)
+            {
+                massiv[i] = random.Next(-300, 300);
+            }
+            Console.WriteLine(String.Join(", ", massiv));
+
+            for (int i = 0; i < massiv.Length - 1; i++)
+            {
+                if (massiv[i] > massiv[i + 1])
+                {
+                    Console.WriteLine($"Нарушитель: {massiv[i]} ");
+                    break;
+
+                }
+            }
+
             Console.ReadKey();
 
 
